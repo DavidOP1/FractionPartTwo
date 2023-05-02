@@ -239,7 +239,7 @@ namespace ariel{
             numerator = (first.getNumerator()*second.getDenominator());
             denomator = (first.getDenominator()*second.getNumerator());
             
-            //check_overflow(result,numerator,denomator);
+            check_overflow(result,numerator,denomator);
            
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
@@ -265,7 +265,7 @@ namespace ariel{
             numerator = (first.getNumerator()*1000);
             denomator = (first.getDenominator()*second*1000);
             
-            //check_overflow(result,numerator,denomator);
+            check_overflow(result,numerator,denomator);
             
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
@@ -290,7 +290,7 @@ namespace ariel{
             numerator = (first*1000*second.getDenominator());
             denomator = (1000*second.getNumerator());
             
-            //check_overflow(result,numerator,denomator);
+            check_overflow(result,numerator,denomator);
             
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
@@ -311,7 +311,7 @@ namespace ariel{
             numerator = (first.getNumerator()*second.getNumerator());
             denomator = (first.getDenominator()*second.getDenominator());
             
-            //check_overflow(result,numerator,denomator);
+            check_overflow(result,numerator,denomator);
             
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
@@ -333,7 +333,7 @@ namespace ariel{
             numerator = (first.getNumerator()*second*1000);
             denomator = (first.getDenominator()*1000);
             
-            //check_overflow(result,numerator,denomator);
+            check_overflow(result,numerator,denomator);
             
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
@@ -355,7 +355,7 @@ namespace ariel{
             numerator = (first*1000*second.getNumerator());
             denomator = (1000*second.getDenominator());
             
-            //check_overflow(result,numerator,denomator);
+            check_overflow(result,numerator,denomator);
             
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
