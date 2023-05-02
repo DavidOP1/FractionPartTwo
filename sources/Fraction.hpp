@@ -27,6 +27,8 @@ class Fraction{
         void gcd_frac(int&,int&);
     //redduce float
         void reduce_float(float&);
+    //check overfloiw
+        void check_overflow(float,float,float);
  //Addition
         Fraction operator+(const Fraction&, const Fraction& );
         Fraction operator+(const Fraction&  , float );
