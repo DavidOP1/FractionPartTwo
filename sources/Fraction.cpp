@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cmath>
 #include <numeric>
-#include <climits.h>
+#include <climits>
 using namespace std;
 
 namespace ariel{
