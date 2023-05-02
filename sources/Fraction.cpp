@@ -81,6 +81,10 @@ namespace ariel{
             num = floor(num * 1000) / 1000; 
         };
         void check_overflow(float result , float frac1, float frac2 ){
+            
+            cout << "1: " << frac1 << endl;
+            cout << "2: " << frac2 << endl;
+            cout << "3: " << result << endl;
             if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || frac1 < static_cast<float>(INT_MIN)  || 
                frac1 > static_cast<float>(INT_MAX) || frac2 > static_cast<float>(INT_MAX) || frac2 < static_cast<float>(INT_MIN) || frac1 > FLT_MAX || frac1 <FLT_MIN
               || frac2 < FLT_MIN || frac2 > FLT_MAX || result > FLT_MAX || result < FLT_MIN){
