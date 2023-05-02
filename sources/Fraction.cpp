@@ -99,10 +99,10 @@ namespace ariel{
 
         Fraction operator+(float first,  const Fraction& second){
             int numerator = 0 , denomator = 0 ;
-            reduce_float(first);
+            
             float result =0;
             result = first + (float(second.getNumerator())/second.getDenominator());
-            
+            reduce_float(first);
             reduce_float(result);
             
             numerator = (first*1000*second.getDenominator())+(1000*second.getNumerator());
@@ -119,9 +119,9 @@ namespace ariel{
         Fraction operator+(const Fraction& first , float second){
             int numerator = 0 , denomator = 0 ;
             float result =0;
-            reduce_float(second);
-            result = second + (float(first.getNumerator())/first.getDenominator());
             
+            result = second + (float(first.getNumerator())/first.getDenominator());
+            reduce_float(second);
             reduce_float(result);
             
             numerator = (first.getNumerator()*1000)+(first.getDenominator()*second*1000);
@@ -156,10 +156,10 @@ namespace ariel{
     
         Fraction operator-(const Fraction& first, float second){
             int numerator = 0 , denomator = 0 ;
-            reduce_float(second);
+            
             float result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) - second;
-            
+            reduce_float(second);
             reduce_float(result);
             
             numerator = (first.getNumerator()*1000)-(first.getDenominator()*second*1000);
@@ -174,10 +174,10 @@ namespace ariel{
         };
         Fraction operator-(float  first, const Fraction& second){
             int numerator = 0 , denomator = 0 ;
-            reduce_float(first);
+            
             float result =0;
             result =   first - (float(second.getNumerator())/second.getDenominator());
-            
+            reduce_float(first);
             reduce_float(result);
             
             numerator = (first*1000*second.getDenominator())-(1000*second.getNumerator());
@@ -217,11 +217,11 @@ namespace ariel{
             if(second==0){
                 throw runtime_error("divided by zero");
             }
-            reduce_float(second);
+       
             int numerator =0 , denomator =0;
             float result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) / second;
-            
+            reduce_float(second);
             reduce_float(result);
             
             numerator = (first.getNumerator()*1000);
@@ -239,10 +239,11 @@ namespace ariel{
                 throw runtime_error("divided by zero");
             }
             int numerator =0 , denomator =0;
-            reduce_float(first);
+            
             float result =0;
             
             result =   first / (float(second.getNumerator())/second.getDenominator());
+            reduce_float(first);
             
             reduce_float(result);
             
@@ -261,7 +262,6 @@ namespace ariel{
             float result =0;
             int numerator = 0 , denomator =0 ;
             result =   (float(first.getNumerator())/first.getDenominator()) * (float(second.getNumerator())/second.getDenominator());
-            cout<< result << endl;
             reduce_float(result);
             
             numerator = (first.getNumerator()*second.getNumerator());
@@ -276,8 +276,9 @@ namespace ariel{
         };
         Fraction operator*(const Fraction&  first, float second){
             float result =0;
-            reduce_float(second);
+            
             result =   (float(first.getNumerator())/first.getDenominator()) * second;
+            reduce_float(second);
             int numerator = 0 , denomator =0 ;
             
             reduce_float(result);
@@ -294,9 +295,9 @@ namespace ariel{
         };
         Fraction operator*(float  first ,const Fraction& second){
             float result =0;
-            reduce_float(first);
+           
             result =   first * (float(second.getNumerator())/second.getDenominator());
-            
+            reduce_float(first);
             int numerator = 0 , denomator =0 ;
             
             reduce_float(result);
