@@ -237,7 +237,7 @@ namespace ariel{
             reduce_float(result);
             
             numerator = (first.getNumerator()*1000);
-            denomator = (first.getDenominator()*second*1000));
+            denomator = (first.getDenominator()*second*1000);
             
             int check = result;
             
