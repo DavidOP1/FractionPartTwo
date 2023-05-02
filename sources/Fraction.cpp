@@ -80,7 +80,7 @@ namespace ariel{
     //Addition
         Fraction operator+(const Fraction& first, const Fraction& second){
             int numerator =  0, denomator = 0;
-            float result =0;
+            int result =0;
             result = (float(second.getNumerator())/second.getDenominator()) + (float(first.getNumerator())/first.getDenominator());
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
@@ -95,7 +95,7 @@ namespace ariel{
         Fraction operator+(float first,  const Fraction& second){
             int numerator = 0 , denomator = 0 ;
             reduce_float(first);
-            float result =0;
+            int result =0;
             result = first + (float(second.getNumerator())/second.getDenominator());
             if(result>INT_MAX || result<INT_MIN){
                 throw overflow_error("more then int max");
@@ -109,7 +109,7 @@ namespace ariel{
         };
         Fraction operator+(const Fraction& first , float second){
             int numerator = 0 , denomator = 0 ;
-            float result =0;
+            int result =0;
             result = second + (float(first.getNumerator())/first.getDenominator());
             if(result>INT_MAX || result<INT_MIN){
                 throw overflow_error("more then int max");
@@ -124,7 +124,7 @@ namespace ariel{
     //Subtraction
         Fraction operator-(const Fraction& first, const Fraction& second){
             int numerator =0 , denomator =0 ;
-            float result =0;
+            int result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) - (float(second.getNumerator())/second.getDenominator());
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
@@ -137,7 +137,7 @@ namespace ariel{
         Fraction operator-(const Fraction& first, float second){
             int numerator = 0 , denomator = 0 ;
             reduce_float(second);
-            float result =0;
+            int result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) - second;
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
@@ -150,7 +150,7 @@ namespace ariel{
         Fraction operator-(float  first, const Fraction& second){
             int numerator = 0 , denomator = 0 ;
             reduce_float(first);
-            float result =0;
+            int result =0;
             result =   first - (float(second.getNumerator())/second.getDenominator());
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
@@ -166,7 +166,7 @@ namespace ariel{
             if(second.getNumerator()==0){
                 throw runtime_error("divided by zero");
             }
-            float result =0;
+            int result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) / (float(second.getNumerator())/second.getDenominator());
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
@@ -182,7 +182,7 @@ namespace ariel{
             if(second==0){
                 throw runtime_error("divided by zero");
             }
-            float result =0;
+            int result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) / second;
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
@@ -198,7 +198,7 @@ namespace ariel{
             if(second.getNumerator()==0){
                 throw runtime_error("divided by zero");
             }
-            float result =0;
+            int result =0;
             result =   first / (float(second.getNumerator())/second.getDenominator());
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
@@ -212,7 +212,7 @@ namespace ariel{
         };
     //Mult
         Fraction operator*(const Fraction&  first, const Fraction& second){
-            float result =0;
+            int result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) * (float(second.getNumerator())/second.getDenominator());
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
@@ -224,7 +224,7 @@ namespace ariel{
             return Fraction(numerator,denomator);
         };
         Fraction operator*(const Fraction&  first, float second){
-            float result =0;
+            int result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) * second;
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
@@ -237,7 +237,7 @@ namespace ariel{
             return Fraction(numerator,denomator);
         };
         Fraction operator*(float  first ,const Fraction& second){
-            float result =0;
+            int result =0;
             result =   first * (float(second.getNumerator())/second.getDenominator());
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
