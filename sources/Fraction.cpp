@@ -294,7 +294,7 @@ namespace ariel{
         };
         Fraction operator*(float  first ,const Fraction& second){
             float result =0;
-            result =   first * (float(second.getNumerator())/second.getDenominator());
+            result =   first * (float(second.getNumerator())*second.getDenominator());
             
             int numerator = 0 , denomator =0 ;
             reduce_float(first);
