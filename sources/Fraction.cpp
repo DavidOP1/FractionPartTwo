@@ -3,6 +3,7 @@
 #include <cmath>
 #include <numeric>
 #include <climits>
+#include <limits>
 #include <cfloat>
 using namespace std;
 
@@ -91,6 +92,18 @@ namespace ariel{
                 throw overflow_error("more then int max");
             }
         };
+    
+        void check_overflow(float result , int frac1, int frac2 ){
+            
+            cout << "1: " << frac1 << endl;
+            cout << "2: " << frac2 << endl;
+            cout << "3: " << result << endl;
+            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || frac1 > numeric_limits<int>::max() ||
+              frac1 < numeric_limits<int>::min() ||  frac2 > numeric_limits<int>::max() ||
+              frac2 < numeric_limits<int>::min() ){
+                throw overflow_error("more then int max");
+            }
+        }
     //Addition
         Fraction operator+(const Fraction& first, const Fraction& second){
             int numerator =  0, denomator = 0;
@@ -226,9 +239,6 @@ namespace ariel{
             
             numerator = (first.getNumerator()*second.getDenominator());
             denomator = (first.getDenominator()*second.getNumerator());
-            float num_temp =0 , den_temp =0 ;
-            num_temp = (first.getNumerator()*second.getDenominator());
-            den_temp = (first.getDenominator()*second.getNumerator());
             
             check_overflow(result,num_temp,den_temp);
            
@@ -256,10 +266,6 @@ namespace ariel{
             numerator = (first.getNumerator()*1000);
             denomator = (first.getDenominator()*second*1000);
             
-            float num_temp =0 , den_temp =0 ;
-            num_temp = (first.getNumerator()*1000);
-            den_temp = (first.getDenominator()*second*1000);
-            
             check_overflow(result,num_temp,den_temp);
             
             gcd_frac(numerator,denomator);
@@ -285,10 +291,6 @@ namespace ariel{
             numerator = (first*1000*second.getDenominator());
             denomator = (1000*second.getNumerator());
             
-            float num_temp =0 , den_temp =0 ;
-            num_temp = (first*1000*second.getDenominator());
-            den_temp = (1000*second.getNumerator());
-            
             check_overflow(result,num_temp,den_temp);
             
             gcd_frac(numerator,denomator);
@@ -309,10 +311,6 @@ namespace ariel{
             
             numerator = (first.getNumerator()*second.getNumerator());
             denomator = (first.getDenominator()*second.getDenominator());
-            float num_temp =0 , den_temp =0 ;
-            
-            num_temp = (first.getNumerator()*second.getNumerator());
-            den_temp =  (first.getDenominator()*second.getDenominator());
             
             check_overflow(result,num_temp,den_temp);
             
@@ -336,11 +334,6 @@ namespace ariel{
             numerator = (first.getNumerator()*second*1000);
             denomator = (first.getDenominator()*1000);
             
-            float num_temp =0 , den_temp =0 ;
-            
-            num_temp = (first.getNumerator()*second*1000);
-            den_temp =  (first.getDenominator()*1000);
-            
             check_overflow(result,num_temp,den_temp);
             
             gcd_frac(numerator,denomator);
@@ -362,11 +355,6 @@ namespace ariel{
             
             numerator = (first*1000*second.getNumerator());
             denomator = (1000*second.getDenominator());
-            
-            float num_temp =0 , den_temp =0 ;
-            
-            num_temp = (first*1000*second.getNumerator());
-            den_temp =  (1000*second.getDenominator());
             
             check_overflow(result,num_temp,den_temp);
             
