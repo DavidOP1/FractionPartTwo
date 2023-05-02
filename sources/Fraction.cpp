@@ -126,7 +126,7 @@ namespace ariel{
             
             reduce_float(result);
             
-            numerator = (first.getNumerator()*1000*second)+(first.getDenominator()*second*1000);
+            numerator = (first.getNumerator()*1000)+(first.getDenominator()*second*1000);
             denomator = (first.getDenominator()*1000);
             
             int check = result;
@@ -168,7 +168,7 @@ namespace ariel{
             
             reduce_float(result);
             
-            numerator = (first.getNumerator()*second*1000)-(first.getDenominator()*1000);
+            numerator = (first.getNumerator()*1000)-(first.getDenominator()*second*1000);
             denomator = (first.getDenominator()*1000);
             
             int check = result;
