@@ -198,6 +198,8 @@ namespace ariel{
             int numerator =0 , denomator =0;
             float result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) / (float(second.getNumerator())/second.getDenominator());
+            cout << "first : " << float(first.getNumerator())/first.getDenominator()) << endl;
+            cout << "second : " << float(second.getNumerator())/second.getDenominator() << endl;
             cout << "divide: " << result << endl;
             reduce_float(result);
             
@@ -263,7 +265,9 @@ namespace ariel{
             int numerator = 0 , denomator =0 ;
             result =   (float(first.getNumerator())/first.getDenominator()) * (float(second.getNumerator())/second.getDenominator());
             reduce_float(result);
-            cout << "mult : " << endl; 
+            cout << "first : " << float(first.getNumerator())/first.getDenominator()) << endl;
+            cout << "second : " << float(second.getNumerator())/second.getDenominator() << endl;
+            cout << "mult : " << result << endl;
             numerator = (first.getNumerator()*second.getNumerator());
             denomator = (first.getDenominator()*second.getDenominator());
             
