@@ -10,7 +10,7 @@ namespace ariel{
     //I was having alot of trouble with this function, since I didn't define at as const or a friend in .hpp
     //So I used the internet for a solution.
         ostream& operator<<(ostream& output, const  Fraction& frac){
-            if(frac.getDenominator()<0 && frac.getNumerator()>0)
+            if((frac.getDenominator()<0 && frac.getNumerator()>0 )|| (frac.getDenominator()>=0 && frac.getNumerator()>0))
                      output << frac.getNumerator() << "/" << frac.getDenominator() ;
             else
                      output << -1*frac.getNumerator() << "/" << -1*frac.getDenominator() ;
