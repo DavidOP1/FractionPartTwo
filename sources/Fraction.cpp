@@ -252,8 +252,8 @@ namespace ariel{
             denomator = (first.getDenominator()*second*1000);
             
             float num_temp =0 , den_temp =0 ;
-            num_temp = (first.getNumerator()*second.getDenominator());
-            den_temp = (first.getDenominator()*second.getNumerator());
+            num_temp = (first.getNumerator()*1000);
+            den_temp = (first.getDenominator()*second*1000);
             
             check_overflow(result,num_temp,den_temp);
             
@@ -281,8 +281,8 @@ namespace ariel{
             denomator = (1000*second.getNumerator());
             
             float num_temp =0 , den_temp =0 ;
-            num_temp = (first.getNumerator()*second.getDenominator());
-            den_temp = (first.getDenominator()*second.getNumerator());
+            num_temp = (first*1000*second.getDenominator());
+            den_temp = (1000*second.getNumerator());
             
             check_overflow(result,num_temp,den_temp);
             
@@ -333,8 +333,8 @@ namespace ariel{
             
             float num_temp =0 , den_temp =0 ;
             
-            num_temp = (first.getNumerator()*second.getNumerator());
-            den_temp =  (first.getDenominator()*second.getDenominator());
+            num_temp = (first.getNumerator()*second*1000);
+            den_temp =  (first.getDenominator()*1000);
             
             check_overflow(result,num_temp,den_temp);
             
@@ -360,8 +360,8 @@ namespace ariel{
             
             float num_temp =0 , den_temp =0 ;
             
-            num_temp = (first.getNumerator()*second.getNumerator());
-            den_temp =  (first.getDenominator()*second.getDenominator());
+            num_temp = (first*1000*second.getNumerator());
+            den_temp =  (1000*second.getDenominator());
             
             check_overflow(result,num_temp,den_temp);
             
