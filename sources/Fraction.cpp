@@ -128,7 +128,7 @@ namespace ariel{
             int numerator = 0 , denomator = 0 ;
             float result =0;
             
-            float fraction1 = float(second.getNumerator())/(second.getDenominator());
+            float fraction1 = float(first.getNumerator())/(first.getDenominator());
             float fraction2 = second; 
             result = fraction1  + fraction2;
 
@@ -169,7 +169,7 @@ namespace ariel{
             
             float result =0;
             
-            float fraction1 = float(second.getNumerator())/(second.getDenominator());
+            float fraction1 = float(first.getNumerator())/(first.getDenominator());
             float fraction2 = second;
             result = fraction1  - fraction2;
 
@@ -190,7 +190,7 @@ namespace ariel{
             
             float result =0;
             float fraction1 = first;
-            float fraction2 = float(first.getNumerator())/(first.getDenominator());
+            float fraction2 = float(second.getNumerator())/(second.getDenominator());
             result = fraction1  - fraction2;
 
             check_overflow(result,fraction1,fraction2);
@@ -211,8 +211,8 @@ namespace ariel{
             }
             int numerator =0 , denomator =0;
             float result =0;
-            float fraction1 = float(second.getNumerator())/(second.getDenominator());
-            float fraction2 = float(first.getNumerator())/(first.getDenominator());
+            float fraction1 = float(first.getNumerator())/(first.getDenominator());
+            float fraction2 = float(second.getNumerator())/(second.getDenominator());
             result = fraction1  / fraction2;
 
             check_overflow(result,fraction1,fraction2);
@@ -236,7 +236,7 @@ namespace ariel{
             int numerator =0 , denomator =0;
             float result =0;
             
-            float fraction1 = float(second.getNumerator())/(second.getDenominator());
+            float fraction1 = float(first.getNumerator())/(first.getDenominator());
             float fraction2 = second;
             result = fraction1  / fraction2;
 
@@ -259,7 +259,7 @@ namespace ariel{
             
             float result =0;
             float fraction1 = first;
-            float fraction2 = float(first.getNumerator())/(first.getDenominator());
+            float fraction2 = float(second.getNumerator())/(second.getDenominator());
             result = fraction1  / fraction2;
 
             check_overflow(result,fraction1,fraction2);
@@ -296,7 +296,7 @@ namespace ariel{
         Fraction operator*(const Fraction&  first, float second){
             float result =0;
             
-            float fraction1 = float(second.getNumerator())/(second.getDenominator());
+            float fraction1 = float(first.getNumerator())/(first.getDenominator());
             float fraction2 = second;
             result = fraction1  * fraction2;
 
@@ -318,7 +318,7 @@ namespace ariel{
             float result =0;
            
             float fraction1 = first;
-            float fraction2 = float(first.getNumerator())/(first.getDenominator());
+            float fraction2 = float(second.getNumerator())/(second.getDenominator());
             result = fraction1  * fraction2;
 
             check_overflow(result,fraction1,fraction2);
