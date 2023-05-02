@@ -359,7 +359,7 @@ namespace ariel{
             float result_second =float(second.getNumerator())/second.getDenominator();
             reduce_float(result_first);
             reduce_float(result_second);
-            return result_first>result_second;
+            return result_first<result_second;
             };
 
         bool operator<(const Fraction&  first, float second){
