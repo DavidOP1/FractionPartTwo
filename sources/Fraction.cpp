@@ -83,7 +83,7 @@ namespace ariel{
             int result =0;
             result = (float(second.getNumerator())/second.getDenominator()) + (float(first.getNumerator())/first.getDenominator());
             
-            reduce(result);
+            reduce_float(result);
             
             numerator = result*1000;
             denomator= 1000;
@@ -104,7 +104,7 @@ namespace ariel{
             float result =0;
             result = first + (float(second.getNumerator())/second.getDenominator());
             
-            reduce(result);
+            reduce_float(result);
             
             numerator = result*1000;
             denomator= 1000;
@@ -125,7 +125,7 @@ namespace ariel{
             reduce_float(second);
             result = second + (float(first.getNumerator())/first.getDenominator());
             
-            reduce(result);
+            reduce_float(result);
             
             numerator = result*1000;
             denomator= 1000;
@@ -146,7 +146,7 @@ namespace ariel{
             float result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) - (float(second.getNumerator())/second.getDenominator());
             
-            reduce(result);
+            reduce_float(result);
             
             numerator = result*1000;
             denomator= 1000;
@@ -167,7 +167,7 @@ namespace ariel{
             float result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) - second;
             
-            reduce(result);
+            reduce_float(result);
             
             numerator = result*1000;
             denomator= 1000;
@@ -187,7 +187,7 @@ namespace ariel{
             float result =0;
             result =   first - (float(second.getNumerator())/second.getDenominator());
             
-            reduce(result);
+            reduce_float(result);
             
             numerator = result*1000;
             denomator= 1000;
@@ -210,7 +210,7 @@ namespace ariel{
             float result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) / (float(second.getNumerator())/second.getDenominator());
             
-            reduce(result);
+            reduce_float(result);
             
             numerator = result*1000;
             denomator= 1000;
@@ -235,7 +235,7 @@ namespace ariel{
             float result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) / second;
             
-            reduce(result);
+            reduce_float(result);
             
             numerator = result*1000;
             denomator= 1000;
@@ -259,7 +259,7 @@ namespace ariel{
             
             result =   first / (float(second.getNumerator())/second.getDenominator());
             
-            reduce(result);
+            reduce_float(result);
             
             numerator = result*1000;
             denomator= 1000;
@@ -279,7 +279,7 @@ namespace ariel{
             int numerator = 0 , denomator =0 ;
             result =   (float(first.getNumerator())/first.getDenominator()) * (float(second.getNumerator())/second.getDenominator());
             
-            reduce(result);
+            reduce_float(result);
             
             numerator = result*1000;
             denomator= 1000;
@@ -299,7 +299,7 @@ namespace ariel{
             int numerator = 0 , denomator =0 ;
             reduce_float(second);
             
-            reduce(result);
+            reduce_float(result);
             
             numerator = result*1000;
             denomator= 1000;
@@ -320,7 +320,7 @@ namespace ariel{
             int numerator = 0 , denomator =0 ;
             reduce_float(first);
             
-            reduce(result);
+            reduce_float(result);
             
             numerator = result*1000;
             denomator= 1000;
