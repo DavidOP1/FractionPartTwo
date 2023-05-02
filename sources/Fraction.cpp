@@ -335,7 +335,7 @@ namespace ariel{
         };
     //greater than
         bool operator>(const Fraction&  first , const Fraction& second){
-            float result_first =(float(first.getNumerator())/first.getDenominator());
+            float result_first = float(first.getNumerator())/first.getDenominator();
             float result_second =float(second.getNumerator())/second.getDenominator();
             reduce_float(result_first);
             reduce_float(result_second);
@@ -355,7 +355,7 @@ namespace ariel{
         };
     //smaller then
         bool operator<(const Fraction&  first, const Fraction& second){
-            float result_first =(float(first.getNumerator())/first.getDenominator());
+            float result_first =float(first.getNumerator())/first.getDenominator();
             float result_second =float(second.getNumerator())/second.getDenominator();
             reduce_float(result_first);
             reduce_float(result_second);
@@ -377,7 +377,7 @@ namespace ariel{
         };
     //greater equal
         bool operator>=(const Fraction&  first, const Fraction& second){
-            float result_first =(float(first.getNumerator())/first.getDenominator());
+            float result_first =float(first.getNumerator())/first.getDenominator();
             float result_second =float(second.getNumerator())/second.getDenominator();
             reduce_float(result_first);
             reduce_float(result_second);
@@ -397,7 +397,7 @@ namespace ariel{
         };
     //smaller equal
         bool operator<=(const Fraction&  first, const Fraction& second){
-            float result_first =(float(first.getNumerator())/first.getDenominator());
+            float result_first =float(first.getNumerator())/first.getDenominator();
             float result_second =float(second.getNumerator())/second.getDenominator();
             reduce_float(result_first);
             reduce_float(result_second);
@@ -417,7 +417,7 @@ namespace ariel{
         };
     //==
         bool operator==(const Fraction&  first, const Fraction& second){
-            float result_first =(float(first.getNumerator())/first.getDenominator());
+            float result_first =float(first.getNumerator())/first.getDenominator();
             float result_second =float(second.getNumerator())/second.getDenominator();
             reduce_float(result_first);
             reduce_float(result_second);
