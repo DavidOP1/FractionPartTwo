@@ -261,7 +261,7 @@ namespace ariel{
             float result =0;
             int numerator = 0 , denomator =0 ;
             result =   (float(first.getNumerator())/first.getDenominator()) * (float(second.getNumerator())/second.getDenominator());
-            
+            cout<< result << endl;
             reduce_float(result);
             
             numerator = (first.getNumerator()*second.getNumerator());
