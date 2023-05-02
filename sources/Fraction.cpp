@@ -276,9 +276,9 @@ namespace ariel{
         };
         Fraction operator*(const Fraction&  first, float second){
             float result =0;
+            reduce_float(second);
             result =   (float(first.getNumerator())/first.getDenominator()) * second;
             int numerator = 0 , denomator =0 ;
-            reduce_float(second);
             
             reduce_float(result);
             
@@ -294,10 +294,10 @@ namespace ariel{
         };
         Fraction operator*(float  first ,const Fraction& second){
             float result =0;
-            result =   first * (float(second.getNumerator())*second.getDenominator());
+            reduce_float(first);
+            result =   first * (float(second.getNumerator())/second.getDenominator());
             
             int numerator = 0 , denomator =0 ;
-            reduce_float(first);
             
             reduce_float(result);
             
