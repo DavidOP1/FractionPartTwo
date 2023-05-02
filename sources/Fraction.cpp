@@ -89,7 +89,7 @@ namespace ariel{
             denomator= 1000;
             
             int check = result;
-            if(result>INT_MAX || result < INT_MIN){
+            if(check>INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
             
@@ -111,7 +111,7 @@ namespace ariel{
             
             int check = result;
             
-            if(result>INT_MAX || result<INT_MIN){
+            if(check>INT_MAX || check<INT_MIN){
                 throw overflow_error("more then int max");
             }
             
@@ -132,7 +132,7 @@ namespace ariel{
             
             int check = result;
             
-            if(result>INT_MAX || result<INT_MIN){
+            if(check>INT_MAX || check<INT_MIN){
                 throw overflow_error("more then int max");
             }
             
@@ -153,7 +153,7 @@ namespace ariel{
             
             int check = result;
             
-            if(result>INT_MAX || result < INT_MIN){
+            if(check>INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
 
@@ -174,7 +174,7 @@ namespace ariel{
             
             int check = result;
             
-            if(result>INT_MAX || result < INT_MIN){
+            if(check>INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
 
@@ -194,7 +194,7 @@ namespace ariel{
             
             int check  = result;
             
-            if(result>INT_MAX || result < INT_MIN){
+            if(check>INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
 
@@ -217,7 +217,7 @@ namespace ariel{
             
             int check = result;
             
-            if(result>INT_MAX || result < INT_MIN){
+            if(check>INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
            
@@ -306,7 +306,7 @@ namespace ariel{
             
             int check = result;
             
-            if(>INT_MAX || result < INT_MIN){
+            if(check>INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
             
@@ -327,7 +327,7 @@ namespace ariel{
             
             int check = result;
             
-            if(result>INT_MAX || result < INT_MIN){
+            if(check>INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
 
