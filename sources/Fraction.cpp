@@ -88,7 +88,7 @@ namespace ariel{
             numerator = (first.getNumerator()*second.getDenominator())+(first.getDenominator()*second.getNumerator());
             denomator = (first.getDenominator()*second.getDenominator());
             
-            reduce_float(result);
+            cout << result << endl;
                         
             int check = static_cast<int>(result);
             if(check>INT_MAX || check< INT_MIN){
