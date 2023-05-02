@@ -91,7 +91,7 @@ namespace ariel{
             cout << "result: " << result << endl;
                         
             int check = static_cast<int>(round(result));
-            if(check>=INT_MAX || check=< INT_MIN){
+            if((check >=INT_MAX) || (check =< INT_MIN)){
                 throw overflow_error("more then int max");
             }
             
