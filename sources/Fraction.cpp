@@ -80,7 +80,7 @@ namespace ariel{
     //Addition
         Fraction operator+(const Fraction& first, const Fraction& second){
             int numerator =  0, denomator = 0;
-            int result =0;
+            float result =0;
             result = (float(second.getNumerator())/second.getDenominator()) + (float(first.getNumerator())/first.getDenominator());
             
             reduce_float(result);
