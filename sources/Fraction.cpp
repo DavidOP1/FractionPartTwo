@@ -88,7 +88,7 @@ namespace ariel{
             numerator = result*1000;
             denomator= 1000;
             
-            result = int(result);
+            int check = result;
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
             }
@@ -109,7 +109,7 @@ namespace ariel{
             numerator = result*1000;
             denomator= 1000;
             
-            result = int(result);
+            int check = result;
             
             if(result>INT_MAX || result<INT_MIN){
                 throw overflow_error("more then int max");
@@ -130,7 +130,7 @@ namespace ariel{
             numerator = result*1000;
             denomator= 1000;
             
-            result = int(result);
+            int check = result;
             
             if(result>INT_MAX || result<INT_MIN){
                 throw overflow_error("more then int max");
@@ -151,7 +151,7 @@ namespace ariel{
             numerator = result*1000;
             denomator= 1000;
             
-            result = int(result);
+            int check = result;
             
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
@@ -172,7 +172,7 @@ namespace ariel{
             numerator = result*1000;
             denomator= 1000;
             
-            result = int(result);
+            int check = result;
             
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
@@ -192,7 +192,7 @@ namespace ariel{
             numerator = result*1000;
             denomator= 1000;
             
-            result = int(result);
+            int check  = result;
             
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
@@ -215,7 +215,7 @@ namespace ariel{
             numerator = result*1000;
             denomator= 1000;
             
-            result = int(result);
+            int check = result;
             
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
@@ -240,9 +240,9 @@ namespace ariel{
             numerator = result*1000;
             denomator= 1000;
             
-            result = int(result);
+            int check = result;
             
-            if(result>INT_MAX || result < INT_MIN){
+            if(check>INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
 
@@ -264,9 +264,9 @@ namespace ariel{
             numerator = result*1000;
             denomator= 1000;
             
-            result = int(result);
+            int check = result;
             
-            if(result>INT_MAX || result < INT_MIN){
+            if(check>INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
 
@@ -284,9 +284,9 @@ namespace ariel{
             numerator = result*1000;
             denomator= 1000;
             
-            result = int(result);
+            int check = result;
             
-            if(result>INT_MAX || result < INT_MIN){
+            if(check>INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
 
@@ -304,9 +304,9 @@ namespace ariel{
             numerator = result*1000;
             denomator= 1000;
             
-            result = int(result);
+            int check = result;
             
-            if(result>INT_MAX || result < INT_MIN){
+            if(>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
             }
             
@@ -325,12 +325,11 @@ namespace ariel{
             numerator = result*1000;
             denomator= 1000;
             
-            result = int(result);
+            int check = result;
             
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
             }
-            int numerator = 0 , denomator =0 ;
 
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
