@@ -335,66 +335,65 @@ namespace ariel{
         };
     //greater than
         bool operator>(const Fraction&  first , const Fraction& second){
-            return ((float(first.getNumerator())/first.getDenominator())>(float(second.getNumerator())/second.getDenominator()));
+            return reduce_float(((float(first.getNumerator())/first.getDenominator()))>reduce_float(float(second.getNumerator())/second.getDenominator()));
         };
         bool operator>(const Fraction& first , float second){
             reduce_float(second);
-            cout << "result : " << (float(first.getNumerator())/first.getDenominator()) << endl;
-            return (float(first.getNumerator())/first.getDenominator())>(second);
+            return reduce_float(float(first.getNumerator())/first.getDenominator())>(second);
         };
         bool operator>(float  first, const Fraction& second){
             reduce_float(first);
-            return first>(float(second.getNumerator())/second.getDenominator());
+            return first>reduce_float(float(second.getNumerator())/second.getDenominator());
         };
     //smaller then
         bool operator<(const Fraction&  first, const Fraction& second){
-            return ((float(first.getNumerator())/first.getDenominator())<(float(second.getNumerator())/second.getDenominator()));
+            return (reduce_float(float(first.getNumerator())/first.getDenominator())<reduce_float(float(second.getNumerator())/second.getDenominator()));
             };
 
         bool operator<(const Fraction&  first, float second){
             reduce_float(second);
-            return (float(first.getNumerator())/first.getDenominator())<(second);
+            return reduce_float(float(first.getNumerator())/first.getDenominator())<(second);
         };
 
         bool operator<(float  first, const Fraction& second){
             reduce_float(first);
-            return first<(float(second.getNumerator())/second.getDenominator());
+            return first<reduce_float(float(second.getNumerator())/second.getDenominator());
         };
     //greater equal
         bool operator>=(const Fraction&  first, const Fraction& second){
-            return ((float(first.getNumerator())/first.getDenominator())>=(float(second.getNumerator())/second.getDenominator()));
+            return (reduce_float(float(first.getNumerator())/first.getDenominator())>=reduce_float(float(second.getNumerator())/second.getDenominator()));
         };
         bool operator>=(const Fraction&  first, float second){
             reduce_float(second);
-            return (float(first.getNumerator())/first.getDenominator())>=(second);
+            return reduce_float(float(first.getNumerator())/first.getDenominator())>=(second);
         };
         bool operator>=(float  first, const Fraction& second){
             reduce_float(first);
-            return first>=(float(second.getNumerator())/second.getDenominator());
+            return first>=reduce_float(float(second.getNumerator())/second.getDenominator());
         };
     //smaller equal
         bool operator<=(const Fraction&  first, const Fraction& second){
-            return ((float(first.getNumerator())/first.getDenominator())<=(float(second.getNumerator())/second.getDenominator()));
+            return (reduce_float(float(first.getNumerator())/first.getDenominator())<=reduce_float(float(second.getNumerator())/second.getDenominator()));
         };
         bool operator<=(const Fraction&  first, float second){
             reduce_float(second);
-            return (float(first.getNumerator())/first.getDenominator())<=(second);
+            return reduce_float(float(first.getNumerator())/first.getDenominator())<=(second);
         };
         bool operator<=(float  first, const Fraction& second){
             reduce_float(first);
-            return first<=(float(second.getNumerator())/second.getDenominator());
+            return first<=reduce_float(float(second.getNumerator())/second.getDenominator());
         };
     //==
         bool operator==(const Fraction&  first, const Fraction& second){
-            return ((float(first.getNumerator())/first.getDenominator())==(float(second.getNumerator())/second.getDenominator()));
+            return (reduce_float(float(first.getNumerator())/first.getDenominator())==reduce_float(float(second.getNumerator())/second.getDenominator()));
         };
         bool operator==(const Fraction&  first, float second){
             reduce_float(second);
-            return (float(first.getNumerator())/first.getDenominator())==(second);
+            return reduce_float(float(first.getNumerator())/first.getDenominator())==(second);
         };
         bool operator==(float  first, const Fraction& second){
             reduce_float(first);
-            return first==(float(second.getNumerator())/second.getDenominator());
+            return first==reduce_float(float(second.getNumerator())/second.getDenominator());
         };
     ////Pre-fix
         Fraction& operator++(Fraction& fraction){
