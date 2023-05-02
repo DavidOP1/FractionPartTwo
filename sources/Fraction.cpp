@@ -87,8 +87,7 @@ namespace ariel{
             cout << "2: " << frac2 << endl;
             cout << "3: " << result << endl;
             if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || frac1 < static_cast<float>(INT_MIN)  || 
-               frac1 > static_cast<float>(INT_MAX) || frac2 > static_cast<float>(INT_MAX) || frac2 < static_cast<float>(INT_MIN) || frac1 > FLT_MAX || frac1 <FLT_MIN
-              || frac2 < FLT_MIN || frac2 > FLT_MAX || result > FLT_MAX || result < FLT_MIN){
+               frac1 > static_cast<float>(INT_MAX) || frac2 > static_cast<float>(INT_MAX) || frac2 < static_cast<float>(INT_MIN) ){
                 throw overflow_error("more then int max");
             }
         };
