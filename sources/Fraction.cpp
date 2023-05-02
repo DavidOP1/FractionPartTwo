@@ -81,7 +81,7 @@ namespace ariel{
             num = floor(num * 1000) / 1000; 
         };
         void check_overflow(float result , float frac1, float frac2 ){
-            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || fractio1 < static_cast<float>(INT_MIN)  || 
+            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || fraction1 < static_cast<float>(INT_MIN)  || 
                fraction1 > static_cast<float>(INT_MAX) || fraction2 > static_cast<float>(INT_MAX) || fraction2 < static_cast<float>(INT_MIN)){
                 throw overflow_error("more then int max");
             }
