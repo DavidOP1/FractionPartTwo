@@ -3,6 +3,7 @@
 #include <cmath>
 #include <numeric>
 #include <climits>
+#include <cfloat>
 using namespace std;
 
 namespace ariel{
@@ -88,7 +89,7 @@ namespace ariel{
             numerator = (first.getNumerator()*second.getDenominator())+(first.getDenominator()*second.getNumerator());
             denomator = (first.getDenominator()*second.getDenominator());
 
-            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN)){
+            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || result > FLT_MAX || result < -FLT_MAX ){
                 throw overflow_error("more then int max");
             }
             
@@ -108,7 +109,7 @@ namespace ariel{
             numerator = (first*1000*second.getDenominator())+(1000*second.getNumerator());
             denomator = (1000*second.getDenominator());
             
-            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN)){
+            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || result > FLT_MAX || result < -FLT_MAX ){
                 throw overflow_error("more then int max");
             }
             
@@ -127,7 +128,7 @@ namespace ariel{
             numerator = (first.getNumerator()*1000)+(first.getDenominator()*second*1000);
             denomator = (first.getDenominator()*1000);
             
-            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN)){
+            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || result > FLT_MAX || result < -FLT_MAX ){
                 throw overflow_error("more then int max");
             }
             
@@ -146,7 +147,7 @@ namespace ariel{
             numerator = (first.getNumerator()*second.getDenominator())-(first.getDenominator()*second.getNumerator());
             denomator = (first.getDenominator()*second.getDenominator());
             
-            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN)){
+            if(result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || result > FLT_MAX || result < -FLT_MAX ){
                 throw overflow_error("more then int max");
             }
 
@@ -165,7 +166,7 @@ namespace ariel{
             numerator = (first.getNumerator()*1000)-(first.getDenominator()*second*1000);
             denomator = (first.getDenominator()*1000);
             
-            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN)){
+            if(result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || result > FLT_MAX || result < -FLT_MAX ){
                 throw overflow_error("more then int max");
             }
 
@@ -183,7 +184,7 @@ namespace ariel{
             numerator = (first*1000*second.getDenominator())-(1000*second.getNumerator());
             denomator = (1000*second.getDenominator());
             
-            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN)){
+            if(result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || result > FLT_MAX || result < -FLT_MAX ){
                 throw overflow_error("more then int max");
             }
 
@@ -206,7 +207,7 @@ namespace ariel{
             numerator = (first.getNumerator()*second.getDenominator());
             denomator = (first.getDenominator()*second.getNumerator());
             
-            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN)){
+            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || result > FLT_MAX || result < -FLT_MAX ){
                 throw overflow_error("more then int max");
             }
            
@@ -229,7 +230,7 @@ namespace ariel{
             numerator = (first.getNumerator()*1000);
             denomator = (first.getDenominator()*second*1000);
             
-            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN)){
+            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || result > FLT_MAX || result < -FLT_MAX ){
                 throw overflow_error("more then int max");
             }
 
@@ -252,7 +253,7 @@ namespace ariel{
             numerator = (first*1000*second.getDenominator());
             denomator = (1000*second.getNumerator());
             
-            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN)){
+            if(result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || result > FLT_MAX || result < -FLT_MAX ){
                 throw overflow_error("more then int max");
             }
 
@@ -271,7 +272,7 @@ namespace ariel{
             numerator = (first.getNumerator()*second.getNumerator());
             denomator = (first.getDenominator()*second.getDenominator());
             
-            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN)){
+            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || result > FLT_MAX || result < -FLT_MAX ){
                 throw overflow_error("more then int max");
             }
 
@@ -290,7 +291,7 @@ namespace ariel{
             numerator = (first.getNumerator()*second*1000);
             denomator = (first.getDenominator()*1000);
             
-            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN)){
+            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || result > FLT_MAX || result < -FLT_MAX ){
                 throw overflow_error("more then int max");
             }
             
@@ -309,7 +310,7 @@ namespace ariel{
             numerator = (first*1000*second.getNumerator());
             denomator = (1000*second.getDenominator());
             
-            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN)){
+            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || result > FLT_MAX || result < -FLT_MAX ){
                 throw overflow_error("more then int max");
             }
 
