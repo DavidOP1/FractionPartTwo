@@ -88,7 +88,7 @@ namespace ariel{
             reduce_float(result);
                         
             int check = result;
-            if(check>INT_MAX || check < INT_MIN){
+            if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
             }
             
