@@ -335,8 +335,8 @@ namespace ariel{
         };
     //greater than
         bool operator>(const Fraction&  first , const Fraction& second){
-            float result_first =((float(first.getNumerator())/first.getDenominator());
-            float result_second =float(second.getNumerator())/second.getDenominator());
+            float result_first =(float(first.getNumerator())/first.getDenominator());
+            float result_second =float(second.getNumerator())/second.getDenominator();
             reduce_float(result_first);
             reduce_float(result_second);
             return result_first>result_second;
@@ -349,14 +349,14 @@ namespace ariel{
         };
         bool operator>(float  first, const Fraction& second){
             reduce_float(first);
-            float result  = float(second.getNumerator();
+            float result  = float(second.getNumerator())/second.getDenominator();
             reduce_float(result);
             return first>result;
         };
     //smaller then
         bool operator<(const Fraction&  first, const Fraction& second){
-            float result_first =((float(first.getNumerator())/first.getDenominator());
-            float result_second =float(second.getNumerator())/second.getDenominator());
+            float result_first =(float(first.getNumerator())/first.getDenominator());
+            float result_second =float(second.getNumerator())/second.getDenominator();
             reduce_float(result_first);
             reduce_float(result_second);
             return result_first>result_second;
@@ -371,14 +371,14 @@ namespace ariel{
 
         bool operator<(float  first, const Fraction& second){
             reduce_float(first);
-            float result  = float(second.getNumerator();
+            float result  = float(second.getNumerator())/second.getDenominator();
             reduce_float(result);
             return first<result;
         };
     //greater equal
         bool operator>=(const Fraction&  first, const Fraction& second){
-            float result_first =((float(first.getNumerator())/first.getDenominator());
-            float result_second =float(second.getNumerator())/second.getDenominator());
+            float result_first =(float(first.getNumerator())/first.getDenominator());
+            float result_second =float(second.getNumerator())/second.getDenominator();
             reduce_float(result_first);
             reduce_float(result_second);
             return result_first>=result_second;
@@ -391,14 +391,14 @@ namespace ariel{
         };
         bool operator>=(float  first, const Fraction& second){
             reduce_float(first);
-            float result  = float(second.getNumerator();
+            float result  = float(second.getNumerator())/second.getDenominator();
             reduce_float(result);
             return first>=result;
         };
     //smaller equal
         bool operator<=(const Fraction&  first, const Fraction& second){
-            float result_first =((float(first.getNumerator())/first.getDenominator());
-            float result_second =float(second.getNumerator())/second.getDenominator());
+            float result_first =(float(first.getNumerator())/first.getDenominator());
+            float result_second =float(second.getNumerator())/second.getDenominator();
             reduce_float(result_first);
             reduce_float(result_second);
             return result_first<=result_second;
@@ -411,14 +411,14 @@ namespace ariel{
         };
         bool operator<=(float  first, const Fraction& second){
             reduce_float(first);
-            float result  = float(second.getNumerator();
+            float result  = float(second.getNumerator())/second.getDenominator();
             reduce_float(result);
             return first<=result;
         };
     //==
         bool operator==(const Fraction&  first, const Fraction& second){
-            float result_first =((float(first.getNumerator())/first.getDenominator());
-            float result_second =float(second.getNumerator())/second.getDenominator());
+            float result_first =(float(first.getNumerator())/first.getDenominator());
+            float result_second =float(second.getNumerator())/second.getDenominator();
             reduce_float(result_first);
             reduce_float(result_second);
             return result_first==result_second;
@@ -431,7 +431,7 @@ namespace ariel{
         };
         bool operator==(float  first, const Fraction& second){
             reduce_float(first);
-            float result  = float(second.getNumerator();
+            float result  = float(second.getNumerator())/second.getDenominator();
             reduce_float(result);
             return first==result;
         };
