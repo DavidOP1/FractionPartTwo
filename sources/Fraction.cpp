@@ -87,8 +87,6 @@ namespace ariel{
             result = (float(second.getNumerator())/second.getDenominator()) + (float(first.getNumerator())/first.getDenominator());
             numerator = (first.getNumerator()*second.getDenominator())+(first.getDenominator()*second.getNumerator());
             denomator = (first.getDenominator()*second.getDenominator());
-            
-            cout << "result: " << result << endl;
                         
             int check = static_cast<int>(round(result));
             if(check ==INT_MAX || check == INT_MIN || check > INT_MAX || check < INT_MIN){
@@ -111,9 +109,8 @@ namespace ariel{
             numerator = (first*1000*second.getDenominator())+(1000*second.getNumerator());
             denomator = (1000*second.getDenominator());
             
-            int check = static_cast<int>(result);
-            
-            if(check>INT_MAX || check<INT_MIN){
+            int check = static_cast<int>(round(result));
+            if(check ==INT_MAX || check == INT_MIN || check > INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
             
@@ -132,9 +129,8 @@ namespace ariel{
             numerator = (first.getNumerator()*1000)+(first.getDenominator()*second*1000);
             denomator = (first.getDenominator()*1000);
             
-            int check = static_cast<int>(result);
-            
-            if(check>INT_MAX || check<INT_MIN){
+            int check = static_cast<int>(round(result));
+            if(check ==INT_MAX || check == INT_MIN || check > INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
             
@@ -153,9 +149,8 @@ namespace ariel{
             numerator = (first.getNumerator()*second.getDenominator())-(first.getDenominator()*second.getNumerator());
             denomator = (first.getDenominator()*second.getDenominator());
             
-            int check = static_cast<int>(result);
-            
-            if(check>INT_MAX || check < INT_MIN){
+            int check = static_cast<int>(round(result));
+            if(check ==INT_MAX || check == INT_MIN || check > INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
 
@@ -174,9 +169,8 @@ namespace ariel{
             numerator = (first.getNumerator()*1000)-(first.getDenominator()*second*1000);
             denomator = (first.getDenominator()*1000);
             
-            int check = static_cast<int>(result);
-            
-            if(check>INT_MAX || check < INT_MIN){
+            int check = static_cast<int>(round(result));
+            if(check ==INT_MAX || check == INT_MIN || check > INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
 
@@ -194,9 +188,8 @@ namespace ariel{
             numerator = (first*1000*second.getDenominator())-(1000*second.getNumerator());
             denomator = (1000*second.getDenominator());
             
-            int check = static_cast<int>(result);
-            
-            if(check>INT_MAX || check < INT_MIN){
+            int check = static_cast<int>(round(result));
+            if(check ==INT_MAX || check == INT_MIN || check > INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
 
@@ -217,9 +210,8 @@ namespace ariel{
             numerator = (first.getNumerator()*second.getDenominator());
             denomator = (first.getDenominator()*second.getNumerator());
             
-            int check = static_cast<int>(result);
-            
-            if(check>INT_MAX || check < INT_MIN){
+            int check = static_cast<int>(round(result));
+            if(check ==INT_MAX || check == INT_MIN || check > INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
            
@@ -242,9 +234,8 @@ namespace ariel{
             numerator = (first.getNumerator()*1000);
             denomator = (first.getDenominator()*second*1000);
             
-            int check = static_cast<int>(result);
-            
-            if(check>INT_MAX || check < INT_MIN){
+            int check = static_cast<int>(round(result));
+            if(check ==INT_MAX || check == INT_MIN || check > INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
 
@@ -266,9 +257,8 @@ namespace ariel{
             numerator = (first*1000*second.getDenominator());
             denomator = (1000*second.getNumerator());
             
-            int check = static_cast<int>(result);
-            
-            if(check>INT_MAX || check < INT_MIN){
+            int check = static_cast<int>(round(result));
+            if(check ==INT_MAX || check == INT_MIN || check > INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
 
@@ -286,9 +276,8 @@ namespace ariel{
             numerator = (first.getNumerator()*second.getNumerator());
             denomator = (first.getDenominator()*second.getDenominator());
             
-            int check = static_cast<int>(result);
-            
-            if(check>INT_MAX || check < INT_MIN){
+            int check = static_cast<int>(round(result));
+            if(check ==INT_MAX || check == INT_MIN || check > INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
 
@@ -306,9 +295,8 @@ namespace ariel{
             numerator = (first.getNumerator()*second*1000);
             denomator = (first.getDenominator()*1000);
             
-            int check = static_cast<int>(result);
-            
-            if(check>INT_MAX || check < INT_MIN){
+            int check = static_cast<int>(round(result));
+            if(check ==INT_MAX || check == INT_MIN || check > INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
             
@@ -327,9 +315,8 @@ namespace ariel{
             numerator = (first*1000*second.getNumerator());
             denomator = (1000*second.getDenominator());
             
-            int check = static_cast<int>(result);
-            
-            if(check>INT_MAX || check < INT_MIN){
+            int check = static_cast<int>(round(result));
+            if(check ==INT_MAX || check == INT_MIN || check > INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
 
