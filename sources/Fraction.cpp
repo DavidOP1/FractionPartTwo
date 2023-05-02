@@ -221,8 +221,11 @@ namespace ariel{
             
             numerator = (first.getNumerator()*second.getDenominator());
             denomator = (first.getDenominator()*second.getNumerator());
+            float num_temp =0 , den_temp =0 ;
+            num_temp = (first.getNumerator()*second.getDenominator());
+            den_temp = (first.getDenominator()*second.getNumerator());
             
-            check_overflow(result,denomator,numerator);
+            check_overflow(result,num_temp,den_temp);
            
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
@@ -248,7 +251,11 @@ namespace ariel{
             numerator = (first.getNumerator()*1000);
             denomator = (first.getDenominator()*second*1000);
             
-            check_overflow(result,denomator,numerator);
+            float num_temp =0 , den_temp =0 ;
+            num_temp = (first.getNumerator()*second.getDenominator());
+            den_temp = (first.getDenominator()*second.getNumerator());
+            
+            check_overflow(result,num_temp,den_temp);
             
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
@@ -273,7 +280,11 @@ namespace ariel{
             numerator = (first*1000*second.getDenominator());
             denomator = (1000*second.getNumerator());
             
-            check_overflow(result,denomator,numerator);
+            float num_temp =0 , den_temp =0 ;
+            num_temp = (first.getNumerator()*second.getDenominator());
+            den_temp = (first.getDenominator()*second.getNumerator());
+            
+            check_overflow(result,num_temp,den_temp);
             
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
@@ -293,8 +304,12 @@ namespace ariel{
             
             numerator = (first.getNumerator()*second.getNumerator());
             denomator = (first.getDenominator()*second.getDenominator());
+            float num_temp =0 , den_temp =0 ;
             
-            check_overflow(result,denomator,numerator);
+            num_temp = (first.getNumerator()*second.getNumerator());
+            den_temp =  (first.getDenominator()*second.getDenominator());
+            
+            check_overflow(result,num_temp,den_temp);
             
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
@@ -316,7 +331,12 @@ namespace ariel{
             numerator = (first.getNumerator()*second*1000);
             denomator = (first.getDenominator()*1000);
             
-            check_overflow(result,denomator,numerator);
+            float num_temp =0 , den_temp =0 ;
+            
+            num_temp = (first.getNumerator()*second.getNumerator());
+            den_temp =  (first.getDenominator()*second.getDenominator());
+            
+            check_overflow(result,num_temp,den_temp);
             
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
@@ -338,7 +358,12 @@ namespace ariel{
             numerator = (first*1000*second.getNumerator());
             denomator = (1000*second.getDenominator());
             
-            check_overflow(result,denomator,numerator);
+            float num_temp =0 , den_temp =0 ;
+            
+            num_temp = (first.getNumerator()*second.getNumerator());
+            den_temp =  (first.getDenominator()*second.getDenominator());
+            
+            check_overflow(result,num_temp,den_temp);
             
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
