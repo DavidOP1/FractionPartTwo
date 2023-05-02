@@ -21,8 +21,7 @@ namespace ariel{
         //char sep;
         int num, den;
         input >> num >>  den;
-        cout << "num: " << num << endl;
-        cout << "den: " << den << endl;
+
         if(den==0){
             throw runtime_error("invalid 0 input for denomitor");
         }
@@ -51,15 +50,16 @@ namespace ariel{
 
         Fraction::Fraction(Fraction& first ,int second){
         };
+    
         Fraction::Fraction(int first,int second){
                 if(second == 0){
                     throw invalid_argument("invalid argument 0");
                 }
+            
             this->nume = first;
             this->deno = second;
             gcd_frac(nume,deno);
-            // cout << nume << endl;
-            // cout << deno << endl;
+            
         };
         Fraction::Fraction(int first,Fraction& second){
         };
@@ -88,7 +88,7 @@ namespace ariel{
             numerator = (first.getNumerator()*second.getDenominator())+(first.getDenominator()*second.getNumerator());
             denomator = (first.getDenominator()*second.getDenominator());
             
-            cout << result << endl;
+            cout << "result: " << result << endl;
                         
             int check = static_cast<int>(result);
             if(check>INT_MAX || check< INT_MIN){
