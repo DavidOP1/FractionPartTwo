@@ -89,6 +89,7 @@ namespace ariel{
             denomator = (first.getDenominator()*second.getDenominator());
                         
             int check = static_cast<int>(round(result));
+            cout << check << endl;
             if( check > INT_MAX || check < INT_MIN){
                 throw overflow_error("more then int max");
             }
