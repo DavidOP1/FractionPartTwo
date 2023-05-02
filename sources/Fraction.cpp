@@ -82,11 +82,17 @@ namespace ariel{
             int numerator =  0, denomator = 0;
             int result =0;
             result = (float(second.getNumerator())/second.getDenominator()) + (float(first.getNumerator())/first.getDenominator());
+            
+            reduce(result);
+            
+            numerator = result*1000;
+            denomator= 1000;
+            
+            result = int(result);
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
             }
-            numerator = ((first.getDenominator()*second.getNumerator())+(first.getNumerator()*second.getDenominator()));
-            denomator= first.getDenominator()*second.getDenominator();
+            
  
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
@@ -95,13 +101,19 @@ namespace ariel{
         Fraction operator+(float first,  const Fraction& second){
             int numerator = 0 , denomator = 0 ;
             reduce_float(first);
-            int result =0;
+            float result =0;
             result = first + (float(second.getNumerator())/second.getDenominator());
+            
+            reduce(result);
+            
+            numerator = result*1000;
+            denomator= 1000;
+            
+            result = int(result);
+            
             if(result>INT_MAX || result<INT_MIN){
                 throw overflow_error("more then int max");
             }
-            numerator = (first*1000*second.getDenominator()) + (1000*second.getNumerator());
-            denomator = 1000*second.getDenominator();
             
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
@@ -109,14 +121,21 @@ namespace ariel{
         };
         Fraction operator+(const Fraction& first , float second){
             int numerator = 0 , denomator = 0 ;
-            int result =0;
+            float result =0;
+            reduce_float(second);
             result = second + (float(first.getNumerator())/first.getDenominator());
+            
+            reduce(result);
+            
+            numerator = result*1000;
+            denomator= 1000;
+            
+            result = int(result);
+            
             if(result>INT_MAX || result<INT_MIN){
                 throw overflow_error("more then int max");
             }
-            reduce_float(second);
-            numerator = (first.getDenominator()*second*1000) + (1000*first.getNumerator());
-            denomator = first.getDenominator()*1000;
+            
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
         };
@@ -124,40 +143,61 @@ namespace ariel{
     //Subtraction
         Fraction operator-(const Fraction& first, const Fraction& second){
             int numerator =0 , denomator =0 ;
-            int result =0;
+            float result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) - (float(second.getNumerator())/second.getDenominator());
+            
+            reduce(result);
+            
+            numerator = result*1000;
+            denomator= 1000;
+            
+            result = int(result);
+            
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
             }
-            numerator = (first.getNumerator()*second.getDenominator())-(first.getDenominator()*second.getNumerator());
-            denomator = first.getDenominator() * second.getDenominator();
+
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
         };
+    
         Fraction operator-(const Fraction& first, float second){
             int numerator = 0 , denomator = 0 ;
             reduce_float(second);
-            int result =0;
+            float result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) - second;
+            
+            reduce(result);
+            
+            numerator = result*1000;
+            denomator= 1000;
+            
+            result = int(result);
+            
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
             }
-            numerator = (first.getNumerator()*1000) - (second*1000*first.getDenominator());
-            denomator = first.getDenominator()*1000;
+
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
         };
         Fraction operator-(float  first, const Fraction& second){
             int numerator = 0 , denomator = 0 ;
             reduce_float(first);
-            int result =0;
+            float result =0;
             result =   first - (float(second.getNumerator())/second.getDenominator());
+            
+            reduce(result);
+            
+            numerator = result*1000;
+            denomator= 1000;
+            
+            result = int(result);
+            
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
             }
-            numerator = (first*1000*second.getDenominator()) - (1000*second.getNumerator());
-            denomator = 1000*second.getDenominator();
-            
+
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
         };
@@ -166,14 +206,22 @@ namespace ariel{
             if(second.getNumerator()==0){
                 throw runtime_error("divided by zero");
             }
-            int result =0;
+            int numerator =0 , denomator =0;
+            float result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) / (float(second.getNumerator())/second.getDenominator());
+            
+            reduce(result);
+            
+            numerator = result*1000;
+            denomator= 1000;
+            
+            result = int(result);
+            
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
             }
-            int numerator =0 , denomator =0;
-            numerator = first.getNumerator()*second.getDenominator();
-            denomator = first.getDenominator()*second.getNumerator();
+           
+           
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
 
@@ -182,15 +230,22 @@ namespace ariel{
             if(second==0){
                 throw runtime_error("divided by zero");
             }
-            int result =0;
+            reduce_float(second);
+            int numerator =0 , denomator =0;
+            float result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) / second;
+            
+            reduce(result);
+            
+            numerator = result*1000;
+            denomator= 1000;
+            
+            result = int(result);
+            
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
             }
-            int numerator =0 , denomator =0;
-            reduce_float(second);
-            numerator = first.getNumerator()*1000;
-            denomator = first.getDenominator()*second*1000;
+
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
         };
@@ -198,54 +253,85 @@ namespace ariel{
             if(second.getNumerator()==0){
                 throw runtime_error("divided by zero");
             }
-            int result =0;
+            int numerator =0 , denomator =0;
+            reduce_float(first);
+            float result =0;
+            
             result =   first / (float(second.getNumerator())/second.getDenominator());
+            
+            reduce(result);
+            
+            numerator = result*1000;
+            denomator= 1000;
+            
+            result = int(result);
+            
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
             }
-            int numerator =0 , denomator =0;
-            reduce_float(first);
-            numerator = first*1000*second.getDenominator();
-            denomator = 1000*second.getNumerator();
+
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
         };
     //Mult
         Fraction operator*(const Fraction&  first, const Fraction& second){
-            int result =0;
+            float result =0;
+            int numerator = 0 , denomator =0 ;
             result =   (float(first.getNumerator())/first.getDenominator()) * (float(second.getNumerator())/second.getDenominator());
+            
+            reduce(result);
+            
+            numerator = result*1000;
+            denomator= 1000;
+            
+            result = int(result);
+            
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
             }
-            int numerator = 0 , denomator =0 ;
-            numerator = first.getNumerator()*second.getNumerator();
-            denomator = first.getDenominator() * second.getDenominator();
+
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
         };
         Fraction operator*(const Fraction&  first, float second){
-            int result =0;
+            float result =0;
             result =   (float(first.getNumerator())/first.getDenominator()) * second;
+            int numerator = 0 , denomator =0 ;
+            reduce_float(second);
+            
+            reduce(result);
+            
+            numerator = result*1000;
+            denomator= 1000;
+            
+            result = int(result);
+            
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
             }
-            int numerator = 0 , denomator =0 ;
-            reduce_float(second);
-            numerator = first.getNumerator()*second*1000;
-            denomator = first.getDenominator() * 1000;
+            
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
         };
         Fraction operator*(float  first ,const Fraction& second){
-            int result =0;
+            float result =0;
             result =   first * (float(second.getNumerator())/second.getDenominator());
+            
+            int numerator = 0 , denomator =0 ;
+            reduce_float(first);
+            
+            reduce(result);
+            
+            numerator = result*1000;
+            denomator= 1000;
+            
+            result = int(result);
+            
             if(result>INT_MAX || result < INT_MIN){
                 throw overflow_error("more then int max");
             }
             int numerator = 0 , denomator =0 ;
-            reduce_float(first);
-            numerator = first*1000*second.getNumerator();
-            denomator = 1000 * second.getDenominator();
+
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
         };
