@@ -19,6 +19,7 @@ class Fraction{
         float frac_val;
         
 };
+
     istream& operator>>(istream&  , Fraction&);
     ostream& operator<<(ostream&,  const Fraction&);
     //gcd algo
@@ -28,7 +29,10 @@ class Fraction{
     //redduce float
         void reduce_float(float&);
     //check overfloiw
-        void check_overflow(float,float,float);
+        void check_overflow(float,int,int);
+        void overflow_mult(int, int);
+        void overflow_divide(int  , int);
+
  //Addition
         Fraction operator+(const Fraction&, const Fraction& );
         Fraction operator+(const Fraction&  , float );

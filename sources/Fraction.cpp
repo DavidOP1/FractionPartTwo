@@ -81,22 +81,27 @@ namespace ariel{
         void reduce_float(float& num){
             num = floor(num * 1000) / 1000; 
         };
-        void check_overflow(float result , float frac1, float frac2 ){
-            
-            cout << "1: " << frac1 << endl;
-            cout << "2: " << frac2 << endl;
-            cout << "3: " << result << endl;
-            if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || frac1 < static_cast<float>(INT_MIN)  || 
-               frac1 > static_cast<float>(INT_MAX) || frac2 > static_cast<float>(INT_MAX) || frac2 < static_cast<float>(INT_MIN) ){
-                throw overflow_error("more then int max");
+
+        //All overflow function I got help from web
+        void overflow_mult(int x, int y) {
+            __int128_t res = static_cast<__int128_t>(x) * static_cast<__int128_t>(y);
+            if (res > std::numeric_limits<int>::max() || res < std::numeric_limits<int>::min()) {
+                throw overflow_error("overflow");
             }
-        };
+        }
+
+        void overflow_divide(int numerator , int demonator){
+            if (numerator== std::numeric_limits<int>::min() && demonator== -1) {
+                throw overflow_error("stack");
+            }
+            int result= numerator / demonator;
+            if (result  * demonator != numerator) {
+                 throw overflow_error("overflow");
+            }
+        }
     
         void check_overflow(float result , int frac1, int frac2 ){
             
-            cout << "1: " << frac1 << endl;
-            cout << "2: " << frac2 << endl;
-            cout << "3: " << result << endl;
             if( result > static_cast<float>(INT_MAX) || result < static_cast<float>(INT_MIN) || frac1 > numeric_limits<int>::max() ||
               frac1 < numeric_limits<int>::min() ||  frac2 > numeric_limits<int>::max() ||
               frac2 < numeric_limits<int>::min() ){
@@ -227,20 +232,16 @@ namespace ariel{
                 throw runtime_error("divided by zero");
             }
             int numerator =0 , denomator =0;
-            float result =0;
-            float fraction1 = float(first.getNumerator())/(first.getDenominator());
-            float fraction2 = float(second.getNumerator())/(second.getDenominator());
-            result = fraction1  / fraction2;
-
-            check_overflow(result,fraction1,fraction2);
             
-            reduce_float(result);
+            int first_num = first.getNumerator();
+            int first_den = first.getDenominator();
+            int second_num = second.getNumerator();
+            int second_den = second.getDenominator();
+            numerator = (first_num*second_den);
+            overflow_mult(first_num,second_den);
+            denomator = (first_den*second_num);
+            overflow_mult(first_den,second_num);
             
-            numerator = (first.getNumerator()*second.getDenominator());
-            denomator = (first.getDenominator()*second.getNumerator());
-            
-            check_overflow(result,numerator,denomator);
-           
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
 
@@ -251,112 +252,92 @@ namespace ariel{
             }
        
             int numerator =0 , denomator =0;
-            float result =0;
-            
-            float fraction1 = float(first.getNumerator())/(first.getDenominator());
-            float fraction2 = second;
-            result = fraction1  / fraction2;
 
-            check_overflow(result,fraction1,fraction2);
-            
-            reduce_float(second);
-            reduce_float(result);
-            
-            numerator = (first.getNumerator()*1000);
-            denomator = (first.getDenominator()*second*1000);
-            
-            check_overflow(result,numerator,denomator);
-            
+            int first_num = first.getNumerator();
+            int first_den = first.getDenominator();
+            int second_num = second*1000;
+            int second_den = 1000;
+            numerator = (first_num*second_den);
+            overflow_mult(first_num,second_den);
+            denomator = (first_den*second_num);
+            overflow_mult(first_den,second_num);
+
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
         };
         Fraction operator/(float  first , const Fraction& second){
+
             if(second.getNumerator()==0){
                 throw runtime_error("divided by zero");
             }
+
             int numerator =0 , denomator =0;
             
-            float result =0;
-            float fraction1 = first;
-            float fraction2 = float(second.getNumerator())/(second.getDenominator());
-            result = fraction1  / fraction2;
+            int first_num = first*1000;
+            int first_den = 1000;
+            int second_num = second.getNumerator();
+            int second_den = second.getDenominator();
+            numerator = (first_num*second_den);
+            overflow_mult(first_num,second_den);
+            denomator = (first_den*second_num);
+            overflow_mult(first_den,second_num);
 
-            check_overflow(result,fraction1,fraction2);
-            
-            reduce_float(first);
-            
-            reduce_float(result);
-            
-            numerator = (first*1000*second.getDenominator());
-            denomator = (1000*second.getNumerator());
-            
-            check_overflow(result,numerator,denomator);
-            
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
         };
     //Mult
         Fraction operator*(const Fraction&  first, const Fraction& second){
-            float result =0;
-            int numerator = 0 , denomator =0 ;
-            
-            float fraction1 = float(second.getNumerator())/(second.getDenominator());
-            float fraction2 = float(first.getNumerator())/(first.getDenominator());
-            result = fraction1  * fraction2;
+            int numerator = 0 , denomator =0;
+            int first_num = first.getNumerator() ;
+            int first_den = first.getDenominator();
+            int second_num = second.getNumerator();
+            int second_den = second.getDenominator();
 
-            check_overflow(result,fraction1,fraction2);
-            
-            reduce_float(result);
-            
-            numerator = (first.getNumerator()*second.getNumerator());
-            denomator = (first.getDenominator()*second.getDenominator());
-            
-            check_overflow(result,numerator,denomator);
-            
+            //check overflow
+            numerator = (first_num*second_num);
+            overflow_mult(first_num,second_num);
+            denomator = (first_den*second_den);
+            overflow_mult(first_den,second_den);
+
+
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
         };
-        Fraction operator*(const Fraction&  first, float second){
-            float result =0;
-            
-            float fraction1 = float(first.getNumerator())/(first.getDenominator());
-            float fraction2 = second;
-            result = fraction1  * fraction2;
 
-            check_overflow(result,fraction1,fraction2);
-            
+        Fraction operator*(const Fraction&  first, float second){
             reduce_float(second);
             int numerator = 0 , denomator =0 ;
-            
-            reduce_float(result);
-            
-            numerator = (first.getNumerator()*second*1000);
-            denomator = (first.getDenominator()*1000);
-            
-            check_overflow(result,numerator,denomator);
+            int first_num = first.getNumerator() ;
+            int first_den = first.getDenominator();
+            int second_num = 1000*second;
+            int second_den = 1000;
+
+            //check overflow
+            numerator = (first_num*second_num);
+            overflow_mult(first_num,second_num);
+            denomator = (first_den*second_den);
+            overflow_mult(first_den,second_den);
             
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
         };
-        Fraction operator*(float  first ,const Fraction& second){
-            float result =0;
-           
-            float fraction1 = first;
-            float fraction2 = float(second.getNumerator())/(second.getDenominator());
-            result = fraction1  * fraction2;
 
-            check_overflow(result,fraction1,fraction2);
-            
+        Fraction operator*(float  first ,const Fraction& second){
             reduce_float(first);
-            int numerator = 0 , denomator =0 ;
-            
-            reduce_float(result);
-            
-            numerator = (first*1000*second.getNumerator());
-            denomator = (1000*second.getDenominator());
-            
-            check_overflow(result,numerator,denomator);
-            
+            int numerator = 0 , denomator =0;
+
+            int first_num = first*1000;
+            int first_den = 1000;
+            int second_num = second.getNumerator();
+            int second_den = second.getDenominator();
+
+            //check overflow
+            numerator = (first_num*second_num);
+            overflow_mult(first_num,second_num);
+            denomator = (first_den*second_den);
+            overflow_mult(first_den,second_den);
+
+
             gcd_frac(numerator,denomator);
             return Fraction(numerator,denomator);
         };
